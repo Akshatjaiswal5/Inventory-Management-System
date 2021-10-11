@@ -1,0 +1,33 @@
+#ifndef $IOUMBL
+#define $IOUMBL 0
+
+#include<iostream>
+using namespace std;
+namespace inventory
+{
+ namespace businessLayer
+ {
+  namespace abc
+  {
+   class IUnitOfMeasurement
+   {
+    public:
+    virtual void setCode(int)=0;
+    virtual int getCode()const=0;
+    virtual void setTitle(string)=0;
+    virtual string getTitle()const=0;
+    virtual IUnitOfMeasurement& operator=(const IUnitOfMeasurement&)=0;
+    virtual int operator==(const IUnitOfMeasurement&)=0;
+    virtual int operator!=(const IUnitOfMeasurement&)=0;
+    virtual int operator>(const IUnitOfMeasurement&)=0;
+    virtual int operator>=(const IUnitOfMeasurement&)=0;
+    virtual int operator<(const IUnitOfMeasurement&)=0;
+    virtual int operator<=(const IUnitOfMeasurement&)=0;
+   };
+  }
+ }
+}
+
+
+
+#endif

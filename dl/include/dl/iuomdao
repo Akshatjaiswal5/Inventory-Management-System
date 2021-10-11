@@ -1,0 +1,34 @@
+#ifndef $IOUMDAO
+#define $IOUMDAO 0
+
+#include<dl/iuom>
+#include<dl/uom>
+#include<dl/daoexception>
+#include<iostream>
+#include<forward_list>
+using namespace std;
+namespace inventory
+{
+ namespace dataLayer
+ {
+  namespace abc
+  {
+   class IUnitOfMeasurementDAO
+   {
+    public:
+    static string DATA_FILE;
+    virtual void add(IUnitOfMeasurement*)=0;
+    virtual void update(IUnitOfMeasurement*)=0;
+    virtual void remove(int)=0;
+    virtual IUnitOfMeasurement* getByCode(int)=0;
+    virtual IUnitOfMeasurement* getByTitle(string)=0;
+    virtual forward_list<IUnitOfMeasurement*> *getAll()=0;
+    virtual int getCount()=0;
+    virtual int codeExists(int)=0;
+    virtual int titleExists(string)=0;
+   };
+  }
+ }
+}
+
+#endif

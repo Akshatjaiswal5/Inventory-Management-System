@@ -1,0 +1,4 @@
+#include<dl/iuomdao>
+using namespace inventory;
+using namespace dataLayer;
+string abc::IUnitOfMeasurementDAO::DATA_FILE="units.dat";

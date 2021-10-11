@@ -1,0 +1,36 @@
+#ifndef $BE
+#define $BE 0
+
+#include<map>
+#include<iostream>
+using namespace std;
+namespace inventory
+{
+ namespace businessLayer
+ {
+  class BLException:public exception
+  {
+   private:
+   map<string,string> exceptions;
+   string genericException;
+   public:
+   BLException();
+   BLException(string genericException);
+   BLException(const BLException& other); 
+   virtual ~BLException() throw();
+   BLException& operator=(const BLException &other);
+   const char* what() const throw();
+   int hasGenericException();
+   void setGenericException(string genericException);
+   string getGenericException();
+   void addPropertyException(string property,string exception);
+   string getPropertyException(string property);
+   int hasPropertyException(string property);
+   int hasPropertyExceptions();
+   int hasExceptions();
+   int getPropertyExceptionsCount();
+  };
+ }
+}
+
+#endif

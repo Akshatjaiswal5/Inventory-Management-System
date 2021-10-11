@@ -1,0 +1,14 @@
+#ifndef $STRU
+#define $STRU 0
+
+#include<iostream>
+using namespace std;
+
+namespace stringutils
+{
+ bool equalsIgnoreCase(const char* a,const char* b);
+ bool compareIgnoreCase(string &a,string &b);
+ string trim(string a);
+
+}
+#endif
